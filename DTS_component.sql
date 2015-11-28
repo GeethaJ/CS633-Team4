@@ -1,0 +1,25 @@
+USE [AAD]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DTS_component]') AND type in (N'U'))
+DROP TABLE [dbo].[DTS_component]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[DTS_component](
+	[component_name] [nvarchar](30) NOT NULL,
+	[description] [nvarchar](500) NOT NULL,
+ CONSTRAINT DTS_component_name PRIMARY KEY CLUSTERED 
+(
+	[component_name] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY],
+) ON [PRIMARY]
+GO
+
+GRANT INSERT, SELECT, UPDATE, DELETE ON [DTS_component] TO WEBWISE
+GO
