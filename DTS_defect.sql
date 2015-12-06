@@ -18,7 +18,7 @@ CREATE TABLE [dbo].[DTS_defect](
 	[date_created] datetime NOT NULL,
 	[reported_by] nvarchar(30) NULL,
 	[component_name] [nvarchar](30) NULL,
-	[status] nvarchar(10) NOT NULL,
+	[status] nvarchar(20) NOT NULL,
 	[priority] nvarchar(10) NOT NULL,
 	[assigned_to] nvarchar(30) NULL,
 	[tester_name] nvarchar(30) NULL,
